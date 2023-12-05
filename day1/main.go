@@ -9,7 +9,8 @@ import (
 )
 
 func CalibrateSequence(msg string) int {
-	re := regexp.MustCompile(`\d`)
+	// re := regexp.MustCompile(`\d`)
+	re := regexp.MustCompile(`(\d+|one|two|three|four|five|six|seven|eight|nine)?`)
 	matches := re.FindAllString(msg, -1)
 	result := 0
 	if len(matches) == 0 {
